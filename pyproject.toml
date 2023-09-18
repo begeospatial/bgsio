@@ -1,0 +1,19 @@
+# poetry export --without-hashes --format=requirements.txt > requirements.txt && twine upload -r pypi dist/*
+
+[tool.poetry]
+name = "bgsio"
+version = "0.1.0"
+description = "Be GeoSpatial public IO python tools"
+authors = ["José Beltrán <102664984+jose-begeospatial@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+PyYAML = "^6.0.1"
+bgsutils = "^0.1.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
