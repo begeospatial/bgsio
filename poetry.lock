@@ -2,13 +2,13 @@
 
 [[package]]
 name = "bgsutils"
-version = "0.1.0"
+version = "0.1.1"
 description = "Be GeoSpatial public utils python tools"
 optional = false
 python-versions = ">=3.11,<4.0"
 files = [
-    {file = "bgsutils-0.1.0-py3-none-any.whl", hash = "sha256:ec22e27d2a654dc04582225a2e4622d190b4e04613b0ab85256d74c2611860c6"},
-    {file = "bgsutils-0.1.0.tar.gz", hash = "sha256:4d21450e131e05d670d9ce2459dc3f23fda930bbe685e8dfdc0a626595e11f81"},
+    {file = "bgsutils-0.1.1-py3-none-any.whl", hash = "sha256:5e34489073b6a3abed4de93283f8747082ec968706f9319d1ac03d4774098e5a"},
+    {file = "bgsutils-0.1.1.tar.gz", hash = "sha256:ab4e865496586add33888786cbdcd28813d6916d50763936b65ed12d9de739d5"},
 ]
 
 [[package]]
@@ -63,4 +63,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "391f78b8480a0cebd43e5cc860396381073021aa7f6f8c88cb1099444442ec06"
+content-hash = "6474b174aa228a92f00e595cc192761a43af35340b858cab0244e2530ea913cc"

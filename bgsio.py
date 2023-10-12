@@ -1264,3 +1264,47 @@ def is_lan_path(path):
         bool: True if the path is a LAN path, False otherwise.
     """
     return path.startswith(os.sep + os.sep)
+
+
+def search_yaml_files_by_subdir_filtered(start_dir, filter_dir_list=[]):
+    """
+    Search for YAML files in a directory and its subdirectories, with optional filtering.
+    
+    Parameters:
+        start_dir (str): The directory to start the search from.
+        filter_dir_list (list): List of subdirectories to exclude.
+        
+    Returns:
+        dict: A nested dictionary containing the YAML files found, organized by subdirectory name.
+    """
+    yaml_files_dict = {}
+    
+    for root, dirs, files in os.walk(start_dir):
+        # Filter out unwanted directories
+        dirs[:] = [d for d in dirs if d not in filter_dir_list]
+        
+        subdir_name = os.path.relpath(root, start_dir)
+        if subdir_name == '.':
+            subdir_name = 'root'
+        
+        yaml_files = []
+        for file in files:
+            if file.endswith('.yaml') or file.endswith('.yml'):
+                file_path = os.path.join(root, file)
+                
+                with open(file_path, 'r', encoding='utf-8') as f:
+                    file_content = yaml.safe_load(f) or {}
+                
+                yaml_files.append({
+                    'filename': file,
+                    'contents': file_content
+                })
+                
+        if yaml_files:
+            keys = subdir_name.split('/')
+            d = yaml_files_dict
+            for key in keys:
+                d = d.setdefault(key, {})
+            d['yaml_metadata'] = yaml_files
+            
+    return yaml_files_dict
