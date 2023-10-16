@@ -1,4 +1,6 @@
 # poetry export --without-hashes --format=requirements.txt > requirements.txt && twine upload -r pypi dist/*
+# eval "$(ssh-agent -s)"
+# ssh-add ~/.ssh/id_ed25519_
 
 [tool.poetry]
 name = "bgsio"
