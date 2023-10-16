@@ -7,7 +7,7 @@ import requests
 import toml
 from pathlib import Path
 from typing import Callable, Optional
-from bgsutils.bgsutils import find_value_in_dict
+from bgsutils import find_value_in_dict
 
 
 def find_files_with_key_or_value(surveys_dirpath:str, search_value:str):
